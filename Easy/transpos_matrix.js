@@ -11,3 +11,20 @@ function transposeMatrix(matrix) {
     }
     return transposedMatrix;
   }
+
+
+//   Easier way to think about it, put the row first to make columns first? 
+function transposeMatrix(matrix) {
+    let transposedMatrix = [];
+    // i = col
+    for(let i = 0; i<matrix[0].length; i++ ){
+      let newRow = [];
+      for (let j = 0; j < matrix.length; j++) {
+        // j = row
+        newRow.push(matrix[j][i])
+      }
+      transposedMatrix.push(newRow);
+    }
+    return transposedMatrix;
+  }
+
