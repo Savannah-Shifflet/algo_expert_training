@@ -1,0 +1,23 @@
+function tournamentWinner(competitions, results) {
+  let winners = {};
+
+  for (let i = 0; i < competitions.length; i++) {
+    if(results[i]===0){
+      let currentTeam = competitions[i][1]
+      winners[currentTeam] ? winners[currentTeam] += 3 : winners[currentTeam] = 3
+    }else{
+      let currentTeam = competitions[i][0]
+      winners[currentTeam] ? winners[currentTeam] += 3 : winners[currentTeam] = 3
+    }
+  }
+
+  let highScore = Math.max(...Object.values(winners))
+  console.log(highScore)
+
+   for (const key in winners) {
+     if(winners[key]===highScore){
+       return key
+     }
+   }
+
+}
